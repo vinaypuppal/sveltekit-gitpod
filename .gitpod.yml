@@ -1,14 +1,33 @@
 tasks:
   - init: yarn
     command: |
-      gp open src/routes/index.svelte && \
+      export WS_URL=${gp url 24678 | sed 's/https\?:\/\///'}
+      { gp await-port 3000 && sleep 5 && gp preview $(gp url 3000) & } &> /dev/null
+      gp open src/routes/index.svelte
       yarn dev
+
 ports:
   - port: 3000
     onOpen: open-browser
   - port: 24678
     onOpen: ignore
+
 vscode:
   extensions:
     - svelte.svelte-vscode
     - eamodio.gitlens
+    - bradlc.vscode-tailwindcss
+    - github.vscode-pull-request-github
+    - equinusocio.vsc-material-theme-icons
+    - sdras.night-owl
+    - coenraads.bracket-pair-colorizer-2
+    - dbaeumer.vscode-eslint
+    - tombonnike.vscode-status-bar-format-toggle
+    - codezombiech.gitignore
+    - eamodio.gitlens
+    - esbenp.prettier-vscode
+    - kisstkondoros.vscode-gutter-preview
+    - wix.vscode-import-cost
+    - cpylua.language-postcss
+    - christian-kohler.npm-intellisense
+    - formulahendry.auto-close-tag

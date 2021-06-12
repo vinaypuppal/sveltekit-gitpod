@@ -10,8 +10,11 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		vite: {
-			hmr: {
-				host: `24678-crimson-marsupial-knw1hin1.ws-us09.gitpod.io`
+			server: {
+				hmr: {
+					host: process.env.WS_URL || 'localhost',
+					clientPort: process.env.WS_URL ? 443 : null
+				}
 			}
 		}
 	}
