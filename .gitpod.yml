@@ -31,3 +31,4 @@ vscode:
     - cpylua.language-postcss
     - christian-kohler.npm-intellisense
     - formulahendry.auto-close-tag
+    - csstools.postcss
