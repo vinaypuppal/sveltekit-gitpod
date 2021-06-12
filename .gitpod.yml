@@ -1,0 +1,14 @@
+tasks:
+  - init: yarn
+    command: |
+      gp open src/routes/index.svelte && \
+      yarn dev
+ports:
+  - port: 3000
+    onOpen: open-browser
+  - port: 24678
+    onOpen: ignore
+vscode:
+  extensions:
+    - svelte.svelte-vscode
+    - eamodio.gitlens

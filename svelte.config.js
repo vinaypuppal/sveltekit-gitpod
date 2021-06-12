@@ -8,7 +8,12 @@ const config = {
 
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		target: '#svelte',
+		vite: {
+			hmr: {
+				host: `24678-crimson-marsupial-knw1hin1.ws-us09.gitpod.io`
+			}
+		}
 	}
 };
 
