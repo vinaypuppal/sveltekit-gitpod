@@ -2,10 +2,8 @@ pre-commit:
   parallel: true
   commands:
     linter:
-      files: git diff --name-only @{push}
-      glob: '*.{js,ts}'
-      run: yarn eslint {staged_files} && git add
+      glob: '*.{js,cjs,ts}'
+      run: yarn eslint {staged_files} && git add {staged_files}
     prettier:
-      files: git diff --name-only @{push}
-      glob: '*.{js|jsx|tsx|ts|gql|css|md|json}'
-      run: prettier --write {staged_files} && git add
+      glob: '*.{cjs,js,jsx,tsx,ts,gql,css,md,json}'
+      run: prettier --write {staged_files} && git add {staged_files}
