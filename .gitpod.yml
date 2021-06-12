@@ -1,7 +1,7 @@
 tasks:
   - init: yarn
     command: |
-      export WS_URL="${gp url 24678 | sed 's/https\?:\/\///'}"
+      export WS_URL=$(gp url 24678 | sed 's/https\?:\/\///')
       { gp await-port 3000 && sleep 5 && gp preview $(gp url 3000) & } &> /dev/null
       gp open src/routes/index.svelte
       yarn dev
