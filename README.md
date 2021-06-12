@@ -2,6 +2,8 @@
 
 Everything you need to build a Sveltekut project in [Gitpod](https://www.gitpod.io/);
 
+> Note: Below steps are already implemented in [.gitpod.yml](https://github.com/vinaypuppal/sveltekit-gitpod/blob/main/.gitpod.yml) so you can create a new repository based on this template and open in Gitpod and everything will work as expected.
+
 ## Special config for Gitpod to make HMR work
 
 Sveltekit needs to know how to reach the HMR endpoint. To configure that we need to do two things in our config:
